@@ -41,7 +41,6 @@ dependencies {
   compile "com.android.support.constraint:constraint-layout:${CONSTRAINT_LAYOUT_VERSION}"
   annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:${PERMISSIONSDISPATCHER_VERSION}"
   annotationProcessor "com.jakewharton:butterknife-compiler:${BUTTERKNIFE_VERSION}"
-  annotationProcessor "com.google.dagger:dagger-android-processor:${DAGGER_VERSION}"
   annotationProcessor "com.alibaba:arouter-compiler:${AROUTER_COMPILER_VERSION}"
 
   //compile project(':common')

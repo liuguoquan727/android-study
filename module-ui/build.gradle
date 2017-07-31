@@ -49,6 +49,11 @@ android {
   }
 }
 
+configurations.all {
+  resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+  resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.1'
+}
+
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
   androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -61,6 +66,5 @@ dependencies {
   compile project(':router')
   annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:${PERMISSIONSDISPATCHER_VERSION}"
   annotationProcessor "com.jakewharton:butterknife-compiler:${BUTTERKNIFE_VERSION}"
-  annotationProcessor "com.google.dagger:dagger-android-processor:${DAGGER_VERSION}"
   annotationProcessor "com.alibaba:arouter-compiler:${AROUTER_COMPILER_VERSION}"
 }

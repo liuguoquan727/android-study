@@ -12,34 +12,19 @@
       >
 
     <Button
-        android:id="@+id/rxjava2"
-        android:text="RxJava2"
-        android:textAllCaps="false"
-        android:gravity="center"
+        android:id="@+id/insert"
+        android:text="插入数据"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         />
 
     <Button
-        android:id="@+id/retrofit2"
-        android:text="Retrofit"
-        android:textAllCaps="false"
+        android:id="@+id/read"
+        android:text="读取数据"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
-    <Button
-        android:id="@+id/greendao"
-        android:text="GreenDao"
-        android:textAllCaps="false"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
-    <Button
-        android:id="@+id/dagger"
-        android:text="Dagger"
-        android:textAllCaps="false"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+
+
   </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

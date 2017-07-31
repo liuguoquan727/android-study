@@ -43,6 +43,9 @@ public class MainActivity extends AppBaseActivity {
       new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+          if (mTabManager == null) {
+            return false;
+          }
           switch (item.getItemId()) {
             case ui:
               if (!UI.equals(mTabManager.getCurrentTag())) {
@@ -70,10 +73,19 @@ public class MainActivity extends AppBaseActivity {
 
     Fragment uiFragment =
         (Fragment) ARouter.getInstance().build(RouterConstant.MODULE_UI_MAIN).navigation();
+    if (uiFragment == null) {
+      return;
+    }
     Fragment libraryFragment =
         (Fragment) ARouter.getInstance().build(RouterConstant.MODULE_LIBRARY_MAIN).navigation();
+    if (libraryFragment == null) {
+      return;
+    }
     Fragment toolFragment =
         (Fragment) ARouter.getInstance().build(RouterConstant.MODULE_TOOL_MAIN).navigation();
+    if (toolFragment == null) {
+      return;
+    }
 
     mTabManager = new TabManager(this, getSupportFragmentManager(), R.id.main_container);
     mTabManager.addTab(UI, uiFragment.getClass(), null)

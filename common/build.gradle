@@ -47,9 +47,11 @@ dependencies {
 
   compile "com.android.support:multidex:${MULTIDEX_VERSION}"
 
-  //arouter
-  // compile "com.alibaba:arouter-api:${AROUTER_API_VERSION}"
-  //annotationProcessor "com.alibaba:arouter-compiler:${AROUTER_COMPILER_VERSION}"
+  //dagger
+  compile "com.google.dagger:dagger:${DAGGER_VERSION}"
+  compile "com.google.dagger:dagger-android-support:${DAGGER_VERSION}"
+  annotationProcessor "com.google.dagger:dagger-compiler:${DAGGER_VERSION}"
+  annotationProcessor "com.google.dagger:dagger-android-processor:${DAGGER_VERSION}"
 
   compile "com.github.liuguoquan727:sqlciper:${SQLCIPER_VERSION}"
   compile "com.github.liuguoquan727.library:core:${CORE_VERSION}"
