@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="30dp"
+    android:orientation="vertical"
+    >
+  <TextView
+      android:id="@+id/title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerHorizontal="true"
+      android:layout_marginBottom="@dimen/space_normal"
+      android:gravity="center"
+      android:text="为了给您提供更好的\n服务, 我们需要以下权限"
+      android:textSize="@dimen/h3"
+      />
+  <TextView
+      android:id="@+id/permissions"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/title"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="15dp"
+      android:gravity="center"
+      android:text="位置权限, 拍照权限\n存储权限, 电话权限"
+      android:textSize="@dimen/h3"
+      />
+</RelativeLayout>

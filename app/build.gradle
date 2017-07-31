@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+
+android {
+  compileSdkVersion rootProject.ext.compileSdkVersion
+  buildToolsVersion rootProject.ext.buildToolsVersion
+  defaultConfig {
+    applicationId "com.liuguoquan.study"
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
+    versionCode 1
+    versionName "1.0"
+    multiDexEnabled true
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    javaCompileOptions {
+      annotationProcessorOptions {
+        arguments = [moduleName: project.getName()]
+      }
+    }
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+configurations.all {
+  resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+  resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.1'
+}
+
+dependencies {
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    exclude group: 'com.android.support', module: 'support-annotations'
+  })
+  compile "com.android.support:appcompat-v7:${SUPPORT_VERSION}"
+  testCompile "junit:junit:${JUNIT_VERSION}"
+  compile "com.android.support.constraint:constraint-layout:${CONSTRAINT_LAYOUT_VERSION}"
+  annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:${PERMISSIONSDISPATCHER_VERSION}"
+  annotationProcessor "com.jakewharton:butterknife-compiler:${BUTTERKNIFE_VERSION}"
+  annotationProcessor "com.google.dagger:dagger-android-processor:${DAGGER_VERSION}"
+  annotationProcessor "com.alibaba:arouter-compiler:${AROUTER_COMPILER_VERSION}"
+
+  //compile project(':common')
+
+  if (isDebug.toBoolean()) {
+    compile project(':router')
+  } else {
+    compile project(':module-ui')
+    compile project(':module-library')
+    compile project(':module-tool')
+  }
+}

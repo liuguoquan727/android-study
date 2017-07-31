@@ -1,0 +1,60 @@
+apply plugin: 'com.android.library'
+
+android {
+  compileSdkVersion rootProject.ext.compileSdkVersion
+  buildToolsVersion rootProject.ext.buildToolsVersion
+
+  defaultConfig {
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
+    versionCode 1
+    versionName "1.0"
+
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+dependencies {
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    exclude group: 'com.android.support', module: 'support-annotations'
+  })
+  compile "com.android.support:appcompat-v7:${SUPPORT_VERSION}"
+  testCompile 'junit:junit:4.12'
+  //facebook
+  compile 'com.facebook.rebound:rebound:0.3.8'
+  compile 'com.orhanobut:logger:1.15'
+
+  compile "com.google.guava:guava:${GUAVA_VERSION}"
+  compile 'com.r0adkll:slidableactivity:2.0.5'
+  compile 'com.jaeger.statusbarutil:library:1.4.0'
+  compile 'com.blankj:utilcode:1.7.1'
+  compile 'org.byteam.superadapter:superadapter:3.6.5'
+
+
+  compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+  //glide
+  compile "com.github.bumptech.glide:glide:${GLIDE_VERSION}"
+  annotationProcessor "com.github.bumptech.glide:compiler:${GLIDE_VERSION}"
+  compile "jp.wasabeef:glide-transformations:${GLIDE_TRANSFORMATIONS_VERSION}"
+  compile "com.github.chrisbanes:PhotoView:${PHOTOVIEW_VERSION}"
+
+  compile "com.android.support:multidex:${MULTIDEX_VERSION}"
+
+  //arouter
+  // compile "com.alibaba:arouter-api:${AROUTER_API_VERSION}"
+  //annotationProcessor "com.alibaba:arouter-compiler:${AROUTER_COMPILER_VERSION}"
+
+  compile "com.github.liuguoquan727:sqlciper:${SQLCIPER_VERSION}"
+  compile "com.github.liuguoquan727.library:core:${CORE_VERSION}"
+  compile "com.github.liuguoquan727.library:ImagePick:${CORE_VERSION}"
+  // 权限管理
+  compile "com.github.hotchemi:permissionsdispatcher:${PERMISSIONSDISPATCHER_VERSION}"
+  annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:${PERMISSIONSDISPATCHER_VERSION}"
+}

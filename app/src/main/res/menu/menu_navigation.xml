@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+      android:id="@+id/ui"
+      android:checked="true"
+      android:icon="@android:drawable/ic_dialog_map"
+      android:title="ui"/>
+  <item
+      android:id="@+id/library"
+      android:icon="@android:drawable/btn_star_big_on"
+      android:title="开源库"/>
+  <item
+      android:id="@+id/tool"
+      android:icon="@drawable/ic_person_black_24dp"
+      android:title="工具"/>
+</menu>

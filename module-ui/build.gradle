@@ -1,0 +1,66 @@
+if (isDebug.toBoolean()) {
+  apply plugin: 'com.android.application'
+} else {
+  apply plugin: 'com.android.library'
+}
+
+android {
+  compileSdkVersion rootProject.ext.compileSdkVersion
+  buildToolsVersion rootProject.ext.buildToolsVersion
+
+  defaultConfig {
+    if (isDebug.toBoolean()) {
+      applicationId "com.liuguoquan.moudule.ui"
+    }
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
+    versionCode 1
+    versionName "1.0"
+    multiDexEnabled true
+    //所有资源必须以此 prefix 开头，否则会报错
+    resourcePrefix "module_ui_"
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    javaCompileOptions {
+      annotationProcessorOptions {
+        arguments = [moduleName: project.getName()]
+      }
+    }
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+
+  sourceSets {
+    main {
+      if (isDebug.toBoolean()) {
+        manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+      } else {
+        manifest.srcFile 'src/main/release/AndroidManifest.xml'
+        java {
+          //release 时 debug 目录下文件不需要合并到主工程
+          exclude 'debug/**'
+        }
+      }
+    }
+  }
+}
+
+dependencies {
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    exclude group: 'com.android.support', module: 'support-annotations'
+  })
+  compile "com.android.support:appcompat-v7:${SUPPORT_VERSION}"
+  testCompile "junit:junit:${JUNIT_VERSION}"
+
+
+  compile project(':router')
+  annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:${PERMISSIONSDISPATCHER_VERSION}"
+  annotationProcessor "com.jakewharton:butterknife-compiler:${BUTTERKNIFE_VERSION}"
+  annotationProcessor "com.google.dagger:dagger-android-processor:${DAGGER_VERSION}"
+  annotationProcessor "com.alibaba:arouter-compiler:${AROUTER_COMPILER_VERSION}"
+}
