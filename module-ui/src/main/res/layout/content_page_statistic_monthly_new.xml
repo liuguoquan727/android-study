@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/white"
+    >
+
+  <android.support.design.widget.AppBarLayout
+      android:id="@+id/app_bar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="#ffffff"
+      android:theme="@style/AppTheme.AppBarOverlay"
+      >
+
+    <android.support.design.widget.CollapsingToolbarLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false"
+        app:contentScrim="?attr/colorPrimary"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed"
+        app:statusBarScrim="@android:color/transparent"
+        >
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:fitsSystemWindows="true"
+          android:orientation="vertical"
+          >
+
+        <RelativeLayout
+            android:id="@+id/Root"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+          <TextView
+              android:id="@+id/Title"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerHorizontal="true"
+              android:layout_marginTop="12dp"
+              android:text="桩主收入"
+              android:textColor="#666666"
+              />
+
+          <LinearLayout
+              android:id="@+id/LayoutIncome"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/Title"
+              android:layout_centerHorizontal="true"
+              android:layout_marginTop="@dimen/space_normal"
+              android:orientation="horizontal"
+              >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥"
+                android:textColor="#f54c61"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/Income"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100.00"
+                android:textColor="#f54c61"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                />
+          </LinearLayout>
+
+          <TextView
+              android:id="@+id/BillDate"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/LayoutIncome"
+              android:layout_centerHorizontal="true"
+              android:text="xxxxxx"
+              android:textColor="#999999"
+              />
+
+          <TextView
+              android:id="@+id/Percentage"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/BillDate"
+              android:layout_centerHorizontal="true"
+              android:text="xxxxxx"
+              android:textColor="#999999"
+              />
+
+          <ImageView
+              android:id="@+id/Expand"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/Percentage"
+              android:layout_centerHorizontal="true"
+              android:layout_marginTop="@dimen/space_normal"
+              android:src="@drawable/ic_page_statistic_monthly_collapse"
+              />
+
+          <LinearLayout
+              android:id="@+id/LayoutMore"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/Expand"
+              android:orientation="vertical"
+              android:paddingLeft="32dp"
+              android:paddingRight="32dp"
+              >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#e6e6e6"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_normal"
+                >
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="订单总额"
+                  android:textColor="#999999"
+                  />
+
+              <TextView
+                  android:id="@+id/Amount"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_alignParentRight="true"
+                  android:text="xxxxxx"
+                  android:textColor="#666666"
+                  />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="本月充电"
+                  android:textColor="#999999"
+                  />
+
+              <TextView
+                  android:id="@+id/Count"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_alignParentRight="true"
+                  android:text="xxxxxx"
+                  android:textColor="#666666"
+                  />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="本月电量"
+                  android:textColor="#999999"
+                  />
+
+              <TextView
+                  android:id="@+id/Elec"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_alignParentRight="true"
+                  android:text="xxxxxx"
+                  android:textColor="#666666"
+                  />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_large"
+                />
+          </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:background="#d6d6d6"
+            />
+      </LinearLayout>
+    </android.support.design.widget.CollapsingToolbarLayout>
+  </android.support.design.widget.AppBarLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      app:layout_behavior="@string/appbar_scrolling_view_behavior"
+      >
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#ffffff"
+        app:tabIndicatorColor="#ff0000"
+        app:tabIndicatorHeight="2dp"
+        app:tabTextColor="#666666"
+        app:tabSelectedTextColor="#ff0000"
+        app:tabMode="fixed"
+        >
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        />
+  </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
+

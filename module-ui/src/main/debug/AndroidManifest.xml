@@ -29,6 +29,58 @@
           android:name="android.support.FILE_PROVIDER_PATHS"
           android:resource="@xml/module_ui_file_paths"/>
     </provider>
+
+    <activity
+        android:theme="@style/AppTheme.NoActionBar"
+        android:name=".design.BehaviorActivity"
+        android:screenOrientation="portrait">
+    </activity>
+    <activity
+        android:theme="@style/CollapseTheme"
+        android:name=".design.ScrollingActivity"
+        android:screenOrientation="portrait">
+    </activity>
+    <activity
+        android:theme="@style/AppTheme.NoActionBar"
+        android:name=".design.BottomSheetBehaviorActivity"
+        android:screenOrientation="portrait">
+    </activity>
+    <activity
+        android:theme="@style/AppTheme.NoActionBar"
+        android:name=".design.ToolbarActivity"
+        android:screenOrientation="portrait">
+    </activity>
+    <activity
+        android:theme="@style/AppTheme.NoActionBar"
+        android:name=".design.TextInputActivity"
+        android:screenOrientation="portrait">
+    </activity>
+    <activity
+        android:theme="@style/CollapseTheme"
+        android:name=".design.CollapseActivity"
+        android:screenOrientation="portrait">
+    </activity>
+    <activity
+        android:theme="@style/AppTheme.NoActionBar"
+        android:name=".design.CoordinatorLayoutActivity"
+        android:screenOrientation="portrait">
+    </activity>
+    <activity
+        android:theme="@style/AppTheme.NoActionBar"
+        android:name=".design.FabActivity"
+        android:screenOrientation="portrait">
+    </activity>
+    <activity
+        android:theme="@style/AppTheme.NoActionBar"
+        android:name=".design.PaletteActivity"
+        android:screenOrientation="portrait">
+    </activity>
+    <activity
+        android:theme="@style/AppTheme.NoActionBar"
+        android:name=".design.TabLayoutActivity"
+        android:screenOrientation="portrait">
+    </activity>
+
   </application>
 
 </manifest>
