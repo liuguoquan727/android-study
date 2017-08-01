@@ -31,7 +31,7 @@ public class MainActivity extends AppBaseActivity {
     return "UI";
   }
 
-  @Override public int getLayoutResId() {
+  @Override protected int getContentView() {
     return R.layout.activity_main;
   }
 
@@ -67,7 +67,7 @@ public class MainActivity extends AppBaseActivity {
         }
       };
 
-  @Override public void initView(Bundle savedInstanceState) {
+  @Override protected void initData(Bundle savedInstanceState) {
     mBottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
     mBottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 

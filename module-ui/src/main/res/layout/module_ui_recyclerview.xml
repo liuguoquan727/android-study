@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      >
+
+    <Button
+        android:id="@+id/diffutil"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="DiffUtil使用"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:id="@+id/item_touch_up"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="List形式上下移动"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:id="@+id/item_touch_slide"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="GridView形式移动"
+        android:textAllCaps="false"
+        />
+
+
+    <Button
+        android:id="@+id/snap"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="RecyclerViewSnap"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="ViewPagerCard"
+        android:textAllCaps="false"
+        />
+    <Button
+        android:id="@+id/tantan"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="TanTan"
+        android:textAllCaps="false"
+        />
+  </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+  <!--     Toolbar菜单中menu当中我们大多数都使用图片来按钮，可是有些时候我们也会直接使用文字，文字的颜色如何修改呢。
+
+    其实很简单，我们只要修改styles.xml文件中，添加一句
+
+     <item name="actionMenuTextColor">#ffffff</item>-->
+  <item
+      android:id="@+id/layoutType"
+      android:title="Vertical"
+      app:showAsAction="always"></item>
+</menu>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      >
+
+    <Button
+        android:id="@+id/collapsingToolbarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CollapsingToolbarLayout"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:id="@+id/collapsingToolbarLayout_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CollapsingToolbarLayout中带View"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CoordinatorLayout"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:id="@+id/behavior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Coordinatorlayout Behavior"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tablayout"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:id="@+id/palette"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Palette"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:id="@+id/textInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextInputLayout"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Toolbar"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:id="@+id/fab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FloatingBar"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:id="@+id/snackbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SnackBar"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:id="@+id/bottom_sheet_behavior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BottomSheetBehavior"
+        android:textAllCaps="false"
+        />
+  </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
