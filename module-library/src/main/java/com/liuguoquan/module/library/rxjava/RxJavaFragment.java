@@ -64,31 +64,23 @@ public class RxJavaFragment extends AppBaseFragment {
       R2.id.general, R2.id.thread, R2.id.map, R2.id.flatmap, R2.id.concatmap, R2.id.zip,
       R2.id.filter, R2.id.sample
   }) public void onClick(View view) {
-    switch (view.getId()) {
-      case R2.id.general:
-        genneral();
-        break;
-      case R2.id.thread:
-        doThread();
-        break;
-      case R2.id.map:
-        doMap();
-        break;
-      case R2.id.flatmap:
-        doFlatMap();
-        break;
-      case R2.id.concatmap:
-        doConcatMap();
-        break;
-      case R2.id.zip:
-        doZip();
-        break;
-      case R2.id.filter:
-        doFilter();
-        break;
-      case R2.id.sample:
-        doSample();
-        break;
+    int id = view.getId();
+    if (id == R.id.general) {
+      genneral();
+    } else if (id == R.id.thread) {
+      doThread();
+    } else if (id == R.id.map) {
+      doMap();
+    } else if (id == R.id.flatmap) {
+      doFlatMap();
+    } else if (id == R.id.concatmap) {
+      doConcatMap();
+    } else if (id == R.id.zip) {
+      doZip();
+    } else if (id == R.id.filter) {
+      doFilter();
+    } else if (id == R.id.sample) {
+      doSample();
     }
   }
 

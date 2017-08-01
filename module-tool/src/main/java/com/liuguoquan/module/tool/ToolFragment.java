@@ -2,11 +2,15 @@ package com.liuguoquan.module.tool;
 
 import android.os.Bundle;
 import android.view.View;
+import butterknife.OnClick;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.liuguoquan.commom.base.AppBaseFragment;
+import com.liuguoquan.module.tool.imageprocess.ImageProcessFragment;
+import com.liuguoquan.module.tool.system.SystemApiFragment;
 import com.liuguoquan.router.RouterConstant;
 import com.mdroid.lib.core.base.BasePresenter;
 import com.mdroid.lib.core.base.Status;
+import com.mdroid.lib.core.utils.ActivityUtil;
 
 /**
  * Description:
@@ -20,7 +24,7 @@ import com.mdroid.lib.core.base.Status;
   }
 
   @Override protected int getContentView() {
-    return R.layout.module_tool_fragment_ui;
+    return R.layout.module_tool_ui_main;
   }
 
   @Override public BasePresenter initPresenter() {
@@ -37,5 +41,14 @@ import com.mdroid.lib.core.base.Status;
 
   @Override protected void initView(View parent) {
     requestBaseInitNoBack(getPageTitle());
+  }
+
+  @OnClick({ R2.id.image_process, R2.id.system_api }) public void onClick(View v) {
+    int id = v.getId();
+    if (id == R.id.image_process) {
+      ActivityUtil.startActivity(this, ImageProcessFragment.class);
+    } else if (id == R.id.system_api) {
+      ActivityUtil.startActivity(this, SystemApiFragment.class);
+    }
   }
 }

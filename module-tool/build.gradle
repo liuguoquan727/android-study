@@ -4,6 +4,8 @@ if (isDebug.toBoolean()) {
   apply plugin: 'com.android.library'
 }
 
+apply plugin: 'com.jakewharton.butterknife'
+
 android {
   compileSdkVersion rootProject.ext.compileSdkVersion
   buildToolsVersion rootProject.ext.buildToolsVersion
@@ -67,4 +69,5 @@ dependencies {
   annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:${PERMISSIONSDISPATCHER_VERSION}"
   annotationProcessor "com.jakewharton:butterknife-compiler:${BUTTERKNIFE_VERSION}"
   annotationProcessor "com.alibaba:arouter-compiler:${AROUTER_COMPILER_VERSION}"
+  compile 'com.android.support:support-v4:25.3.1'
 }

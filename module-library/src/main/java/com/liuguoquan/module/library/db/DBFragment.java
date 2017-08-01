@@ -5,9 +5,10 @@ import android.util.Log;
 import android.view.View;
 import butterknife.OnClick;
 import com.liuguoquan.commom.base.AppBaseFragment;
+import com.liuguoquan.commom.bean.User;
+import com.liuguoquan.commom.dao.DaoHelper;
 import com.liuguoquan.module.library.R;
 import com.liuguoquan.module.library.R2;
-import com.liuguoquan.module.library.dao.DaoHelper;
 import com.mdroid.lib.core.base.BasePresenter;
 import com.mdroid.lib.core.base.Status;
 
@@ -42,26 +43,25 @@ public class DBFragment extends AppBaseFragment {
   }
 
   @OnClick({ R2.id.insert, R2.id.read }) public void onClick(View v) {
-    switch (v.getId()) {
-      case R2.id.insert:
-        insert();
-        break;
-      case R2.id.read:
-        read();
-        break;
+
+    int id = v.getId();
+    if (id == R.id.insert) {
+      insert();
+    } else if (id == R.id.read) {
+      read();
     }
   }
 
   private void insert() {
     User user = new User();
-    user.setId(23);
-    user.setName("123");
+    user.setId(24);
+    user.setName("456");
     user.setAge(234);
     DaoHelper.getInstance(getActivity()).getDaoSession().getUserDao().insertOrReplace(user);
   }
 
   private void read() {
-    User user = DaoHelper.getInstance(getActivity()).getDaoSession().getUserDao().load(23l);
+    User user = DaoHelper.getInstance(getActivity()).getDaoSession().getUserDao().load(24l);
     Log.d("lgq", "read: " + user.getName());
   }
 }

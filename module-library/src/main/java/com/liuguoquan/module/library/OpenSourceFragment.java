@@ -5,6 +5,8 @@ import android.view.View;
 import butterknife.OnClick;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.liuguoquan.commom.base.AppBaseFragment;
+import com.liuguoquan.module.library.dagger.DaggerFragment;
+import com.liuguoquan.module.library.db.DBFragment;
 import com.liuguoquan.module.library.rxjava.RxJavaFragment;
 import com.liuguoquan.router.RouterConstant;
 import com.mdroid.lib.core.base.BasePresenter;
@@ -44,10 +46,19 @@ import com.mdroid.lib.core.utils.ActivityUtil;
     requestBaseInitNoBack(getPageTitle());
   }
 
-  @OnClick({ R2.id.rxjava2 }) public void onClick(View view) {
+  @OnClick({ R2.id.rxjava2, R2.id.greendao, R2.id.dagger }) public void onClick(View view) {
     int id = view.getId();
     if (id == R.id.rxjava2) {
       ActivityUtil.startActivity(this, RxJavaFragment.class);
+      return;
+    }
+    if (id == R.id.greendao) {
+      ActivityUtil.startActivity(this, DBFragment.class);
+      return;
+    }
+
+    if (id == R.id.dagger) {
+      ActivityUtil.startActivity(this, DaggerFragment.class);
       return;
     }
   }
