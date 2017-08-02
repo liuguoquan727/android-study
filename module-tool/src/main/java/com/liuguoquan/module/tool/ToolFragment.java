@@ -7,6 +7,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.liuguoquan.commom.base.AppBaseFragment;
 import com.liuguoquan.module.tool.imageprocess.ImageProcessFragment;
 import com.liuguoquan.module.tool.system.SystemApiFragment;
+import com.liuguoquan.module.tool.webview.WebViewUI;
 import com.liuguoquan.router.RouterConstant;
 import com.mdroid.lib.core.base.BasePresenter;
 import com.mdroid.lib.core.base.Status;
@@ -43,12 +44,14 @@ import com.mdroid.lib.core.utils.ActivityUtil;
     requestBaseInitNoBack(getPageTitle());
   }
 
-  @OnClick({ R2.id.image_process, R2.id.system_api }) public void onClick(View v) {
+  @OnClick({ R2.id.image_process, R2.id.system_api, R2.id.webview }) public void onClick(View v) {
     int id = v.getId();
     if (id == R.id.image_process) {
       ActivityUtil.startActivity(this, ImageProcessFragment.class);
     } else if (id == R.id.system_api) {
       ActivityUtil.startActivity(this, SystemApiFragment.class);
+    } else if (id == R.id.webview) {
+      ActivityUtil.startActivity(this, WebViewUI.class);
     }
   }
 }
