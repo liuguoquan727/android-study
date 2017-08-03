@@ -5,6 +5,7 @@ import android.view.View;
 import butterknife.OnClick;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.liuguoquan.commom.base.AppBaseFragment;
+import com.liuguoquan.module.tool.aidl.AidlUI;
 import com.liuguoquan.module.tool.imageprocess.ImageProcessFragment;
 import com.liuguoquan.module.tool.system.SystemApiFragment;
 import com.liuguoquan.module.tool.webview.WebViewUI;
@@ -44,7 +45,8 @@ import com.mdroid.lib.core.utils.ActivityUtil;
     requestBaseInitNoBack(getPageTitle());
   }
 
-  @OnClick({ R2.id.image_process, R2.id.system_api, R2.id.webview }) public void onClick(View v) {
+  @OnClick({ R2.id.image_process, R2.id.system_api, R2.id.webview, R2.id.aidl })
+  public void onClick(View v) {
     int id = v.getId();
     if (id == R.id.image_process) {
       ActivityUtil.startActivity(this, ImageProcessFragment.class);
@@ -52,6 +54,8 @@ import com.mdroid.lib.core.utils.ActivityUtil;
       ActivityUtil.startActivity(this, SystemApiFragment.class);
     } else if (id == R.id.webview) {
       ActivityUtil.startActivity(this, WebViewUI.class);
+    } else if (id == R.id.aidl) {
+      ActivityUtil.startActivity(this, AidlUI.class);
     }
   }
 }
