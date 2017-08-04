@@ -11,6 +11,7 @@ import com.liuguoquan.module.tool.imageprocess.color.ColourFragment;
 import com.liuguoquan.module.tool.imageprocess.color.PixelEffectFragment;
 import com.liuguoquan.module.tool.imageprocess.draw.DrawFragment;
 import com.liuguoquan.module.tool.imageprocess.effect.EffectFragment;
+import com.liuguoquan.module.tool.imageprocess.flipboard.FlipBoardUI;
 import com.mdroid.lib.core.base.BasePresenter;
 import com.mdroid.lib.core.base.Status;
 import com.mdroid.lib.core.utils.ActivityUtil;
@@ -48,7 +49,8 @@ public class ImageProcessFragment extends AppBaseFragment {
   }
 
   @OnClick({
-      R2.id.draw, R2.id.primary_color, R2.id.color_matrix, R2.id.pixel_effect, R2.id.image_effect
+      R2.id.draw, R2.id.primary_color, R2.id.color_matrix, R2.id.pixel_effect, R2.id.image_effect,
+      R2.id.flipboard
   }) public void onClick(View v) {
     int id = v.getId();
     if (id == R.id.draw) {
@@ -61,6 +63,8 @@ public class ImageProcessFragment extends AppBaseFragment {
       ActivityUtil.startActivity(this, PixelEffectFragment.class);
     } else if (id == R.id.image_effect) {
       ActivityUtil.startActivity(this, EffectFragment.class);
+    } else if (id == R.id.flipboard) {
+      ActivityUtil.startActivity(this, FlipBoardUI.class);
     }
   }
 }

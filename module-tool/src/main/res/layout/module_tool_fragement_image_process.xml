@@ -55,6 +55,13 @@
           android:gravity="center"
           android:text="图形特效"
           />
+      <Button
+          android:id="@+id/flipboard"
+          android:text="Flipboard翻页效果"
+          android:textAllCaps="false"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          />
     </LinearLayout>
   </android.support.v4.widget.NestedScrollView>
 </LinearLayout>
