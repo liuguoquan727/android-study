@@ -64,7 +64,6 @@ dependencies {
   compile "com.android.support:appcompat-v7:${SUPPORT_VERSION}"
   testCompile "junit:junit:${JUNIT_VERSION}"
 
-
   compile project(':router')
   annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:${PERMISSIONSDISPATCHER_VERSION}"
   annotationProcessor "com.jakewharton:butterknife-compiler:${BUTTERKNIFE_VERSION}"
